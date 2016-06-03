@@ -749,7 +749,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>US Population Predictor</h1><p>Prabesh Shrestha016</p>
+<h1>US Population Predictor</h1><p>SangitaSharma<br/>11th May 2016</p>
 
 <div class="slideContent" >
 
@@ -759,7 +759,7 @@ hljs.initHighlightingOnLoad();
 <section data-transition="linear" data-transition-speed="default">
 <h3>Application Description:</h3>
 <div class="slideContent" >
-<p>Github: <a href="https://github.com/ssapkota09/Developing-Data-Products">https://github.com/ssapkota09/Developing-Data-Products</a></p>
+<p>Github: <a href="https://github.com/Sangita-Sharma/Developing_data_products">https://github.com/Sangita-Sharma/Developing_data_products</a></p>
 
 <p><small>
 The application uses R code to calculate the future US population between the years 2014 and 2040 using historical population data from the past 34 years (i.e. 1980 to 2013) and linear regression based on those past data points. </p>
@@ -783,46 +783,8 @@ The application uses R code to calculate the future US population between the ye
 <p>The <code>getPop()</code> function in <code>server.R</code> extracts and cleans the historical data: 
 <small></p>
 
-<pre><code class="r">library(XML)
-
-getPop &lt;- function() {
-#Get the population data from the Internet and parse it out into a data.frame called Pop, then format it&#39;s columns
-theurl &lt;- &quot;http://www.usgovernmentspending.com/download_multi_year_1980_2013USb_14c2li101mcn_20s&quot;
-    tables &lt;- readHTMLTable(theurl)
-    n.rows &lt;- unlist(lapply(tables, function(t) dim(t)[1]))
-    tables[[which.max(n.rows)]]
-    x &lt;- tables$&quot;Government Spending ChartFiscal Years 1980 to 2013&quot;
-    Pop &lt;- head(x[,c(1,3)], 34, stringsAsFactors = FALSE)
-    colnames(Pop) &lt;- c(&quot;Year&quot;,&quot;Population (in millions)&quot;)
-    Pop$Year &lt;- round(as.numeric(levels(Pop$Year))[Pop$Year])
-    Pop$&quot;Population (in millions)&quot; &lt;- as.numeric(levels(Pop$&quot;Population (in millions)&quot;))[Pop$&quot;Population (in millions)&quot;]
-        return (Pop)
-}
-#Get cached data from the Internet (to save time from reloading data everytime server.R code is called)
-Pop &lt;&lt;- getPop()
+<pre><code>Error in library(XML) : there is no package called &#39;XML&#39;
 </code></pre>
-
-<p></small></p>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Code snippet to draw the plot:</h3>
-<div class="mediaOnly slideContent" >
-<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-1"/></p>
-
-</div>
-
-</section>
-<section data-transition="linear" data-transition-speed="default">
-<h3>Conclusion:</h3>
-<div class="slideContent" >
-<p><small>
-This tiny shiny app is just a part of peer assignment on a Data Science Coursera Course - Developing Data Products. The objective of this little application is to predict the population of United States of America based on the given data set.</p>
-
-<p>My app is available at: <a href="https://shresthaprabesh.shinyapps.io/Developing-Data-Products/">https://shresthaprabesh.shinyapps.io/Developing-Data-Products/</a>
-</small></p>
 
 </div>
 

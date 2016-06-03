@@ -1,6 +1,6 @@
 ---
 title: "README"
-author: "Prabesh Shrestha"
+author: "SangitaSharma"
 date: "May 12, 2016"
 output: html_document
 runtime: shiny
@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Application Description
 
-Github: <https://github.com/ssapkota09/Developing-Data-Products>
+Github: <https://github.com/Sangita-Sharma/Chapter9DevelopingDataProducts>
 
 The application uses R code to calculate the future US population between the years 2014 and 2040 using historical population data from the past 34 years (i.e. 1980 to 2013) and linear regression based on those past data points. 
 

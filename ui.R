@@ -1,4 +1,4 @@
-# Author: Prabesh Shrestha
+# Author: SangitaSharma
 # Date: 2016-05-12
 #
 # User Interface File for US Population Predictor.
